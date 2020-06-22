@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<div id="wrapper" class="wrapper"></div> <!-- Load 'views/main.html' file in this element -->
+<button id="play-video">Play</button>
 
 <div id="caphPlayer">
 	<video style="width:100%">
@@ -31,11 +31,11 @@
 
 <script>
 
+	document.getElementById( 'play-video' ).addEventListener( 'click', () => {
+		myVideoApp.changeDepth(myVideoApp._DEPTH.PLAYER);
+		myVideoApp.launchPlayer();
+	} );
 
-
-
-	myVideoApp.changeDepth(myVideoApp._DEPTH.PLAYER);
-	myVideoApp.launchPlayer();
 </script>
 </body>
 </html>

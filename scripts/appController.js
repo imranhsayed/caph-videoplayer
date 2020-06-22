@@ -18,31 +18,6 @@ var myVideoApp = {
         chkSubTitle: false
     },
     videoControls: undefined,
-    initCategoryListData: function(callback){
-        var focusController = $.caph.focus.controllerProvider.getInstance();
-        setTimeout(function(){
-            var welcomeElement = $('.welcome');
-            this.updateCategoryListData(CONSTANT.PREPARED_DATA.COLORS, this._CATEGORY.COLORS, true);
-            this.updateCategoryListData(CONSTANT.PREPARED_DATA.ALPHABETS, this._CATEGORY.ALPHABETS, true)
-            this.updateCategoryListData(CONSTANT.PREPARED_DATA.NUMBERS, this._CATEGORY.NUMBERS, true);
-            welcomeElement.addClass('fade-out');
-            focusController.focus($('#' + this._CATEGORY.COLORS + '-' + CONSTANT.PREPARED_DATA.COLORS[0].id));
-            callback && callback();
-        }.bind(this), 0);//3000);
-    },
-    updateCategoryListData: function(response, category, reload){
-        this._dataCategory[category] = response;
-    },
-    setOverviewDark: function(dark){
-        var container = $('#move-container');
-        if(dark){
-            container.addClass('opacity-dark');
-            container.removeClass('opacity-light');
-        } else {
-            container.addClass('opacity-light');
-            container.removeClass('opacity-dark');
-        }
-    },
     changeDepth: function(depth){
         for(var dth in this._DEPTH){
             if(this._DEPTH[dth] !== depth){
@@ -53,27 +28,6 @@ var myVideoApp = {
         this.lastDepth = this.currentDepth;
         this.currentDepth = depth;
         $.caph.focus.controllerProvider.getInstance().setDepth(depth);
-    },
-    setListContainer: function($event, category){
-        if(myVideoApp.currentDepth === myVideoApp._DEPTH.INDEX){
-            $('#list-category > .list-area').addClass('list-fadeout'); // fade-out for each list
-            $('#category_' + category).parent().removeClass('list-fadeout');
-
-            // Move Container
-            if(category === myVideoApp.currentCategory){
-                return;
-            }
-
-            $('#list-category').css({
-                transform: 'translate3d(0, ' + (-CONSTANT.SCROLL_HEIGHT_OF_INDEX * category) + 'px, 0)'
-            });
-            myVideoApp.currentCategory = category;
-        }
-    },
-    updateOverview: function(item){
-        $('.overview > .font-header').html(item.name).css('color', item.color);
-        $('.desc').html(item.description);
-        $('#wrapper').css('borderColor', item.color);
     },
     updateRelatedPlaylist: function(listData){
         this.relatedPlaylistItems = listData;
