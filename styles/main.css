@@ -1,0 +1,658 @@
+@font-face {
+    font-family: "SamsungSVD_Latin Light";
+    src: url("../fonts/SamsungSVDLight_Latin.ttf");
+}
+@font-face {
+    font-family: "SamsungSVD_Latin Medium";
+    src: url("../fonts/SamsungSVDMedium_Latin.ttf");
+}
+
+body {
+    margin: 0;
+    font: 32px 'SamsungSVD_Latin Light';
+}
+
+.font-info {
+    color: #EEE;
+    font: 24px 'SamsungSVD_Latin Medium';
+}
+
+.font-info-dark {
+    color: #a6a6a6;
+    font: 24px 'SamsungSVD_Latin Medium';
+}
+
+.font-body {
+    color: #fff; /*#7F7F7F;*/
+    font: 28px 'SamsungSVD_Latin Light';
+}
+
+.font-subheader {
+    color: #EEE;
+    font: 28px 'SamsungSVD_Latin Medium';
+}
+
+.font-label {
+    color: #EEE;
+    font: 32px 'SamsungSVD_Latin Medium';
+}
+
+.font-label-talk-in-playlist {
+    color: #EEE;
+    font: 21px 'SamsungSVD_Latin Medium';
+}
+
+.font-caption {
+    color: #EEE;
+    font: 48px 'SamsungSVD_Latin Medium';
+}
+
+.font-header {
+    color: #EEE;
+    text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+    font: 60px 'SamsungSVD_Latin Medium';
+}
+
+.welcome {
+    position: absolute;
+    width: 1920px;
+    height: 680px;
+    background-color: #02021A; /*#13161E;*/
+    color: #FFFFFF;
+    z-index: 9;
+    transition: opacity 1s ease-in;
+    font-size: 80px;
+    text-align: center;
+    font-weight: bold;
+    padding-top: 400px;
+}
+.welcome .caph{
+    color: #4984FC;
+    font-size: 300px;
+    font-weight: bold;
+    text-shadow: 5px 5px white;
+}
+
+.welcome.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.wrapper {
+    position: relative;
+    width: 1900px;
+    height: 1060px;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgb(5, 5, 71), rgb(1, 1, 10) 20%);
+    border: 10px solid rgba(0, 0, 0, .5);
+}
+
+.logo {
+    position: absolute;
+    top: 35px;
+    left: 112px;
+    height: 104px;
+    width: 194px;
+    z-index: 1;
+    font: bold 85px 'SamsungSVD_Latin Medium';
+    color: #4984FC;
+    text-shadow: 2px 2px white;
+}
+.logo:before {
+    content: 'CAPH';
+}
+.top-right-area {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    height: 82px;
+    width: 96px;
+}
+
+.overview {
+    position: relative;
+    width: 1770px;
+    margin: 166px 0 0 112px;
+}
+
+.playlist-info {
+    height: 74px;
+}
+
+.playlist-info .image {
+    float: left;
+    width: 54px;
+    height: 54px;
+}
+
+.playlist-info .text {
+    float: left;
+    margin-left: 10px;
+}
+
+.overview .name {
+    position: relative;
+    width: 850px;
+    z-index: 1;
+}
+
+.overview .speakers {
+    position: relative;
+}
+
+.overview .more {
+    position: relative;
+    height: 70px;
+    line-height:70px;
+}
+
+.overview.desc {
+    font-size: 40px;
+    margin: 0 0 0 112px;
+}
+
+.opacity-dark {
+    opacity: .3;
+}
+
+.opacity-light {
+    opacity: 1;
+}
+
+.stage-transition {
+    -webkit-transition: opacity .2s ease-in-out;
+}
+
+.btn-wrapper {
+    position: relative;
+    margin: 70px 0 0 88px; /*64 112-24=88*/
+    height: 92px;
+}
+
+.btn-wrapper-playlist {
+    position: relative;
+    margin: 70px 0 0 88px;
+    height: 92px;
+}
+
+.btn-gap {
+    position: relative;
+    float: left;
+    margin-left: 24px; /*48*/
+}
+
+.list-wrapper {
+    position: absolute;
+    overflow: hidden;
+    width: 1920px;
+    height: 682px;/*498px;*/
+    top: 418px;/*582px;*/
+    -webkit-transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
+}
+
+.list-wrapper-playlist {
+    top: 718px;
+}
+
+.list-area {
+    width: 1920px;
+    height: 250px; /*314px;*/
+    margin-bottom: 40px;
+    -webkit-transform: translateZ(0);
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+    margin-bottom: 60px;
+}
+
+.list-area.list-fadeout {
+    opacity: .1;
+}
+
+.list-area .title {
+    width: 1920px;
+    height: 28px;
+    margin: 0 0 25px 112px;
+}
+
+.list-area .title-opacity {
+    opacity: .4;
+}
+
+.list-container {
+    position: absolute;
+    width: 1920px;
+    height: 265px;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+.list-scroll-wrapper {
+    left: 112px;
+}
+
+.list-category {
+    position: absolute;
+    top: 84px;
+    -webkit-transition: transform .5s ease-in-out;
+}
+
+.watch-anything {
+    color: #EEE;
+    font: 60px 'SamsungSVD_Latin Medium';
+    font-weight: bold;
+    padding-top: 25px;
+    text-align: center;
+}
+
+.shelf-resume-watching {
+    border-top: 32px solid rgba(255, 43, 6, 0.6);
+    border-right: 20px solid transparent;
+    width: 200px;
+    margin-top: 16px;
+    position: absolute;
+}
+
+.shelf-resume-watching:before {
+    content: 'Resume watching';
+    margin: -32px 0 0 16px;
+    position: absolute;
+}
+
+.shelf-resume-progress-bar {
+    position: absolute;
+    width: 467px;
+    background-color: #a6a6a6;
+    height: 8px;
+    bottom: 0;
+    opacity: .95;
+    z-index: 1;
+}
+
+.shelf-resume-progress-bar .active {
+    width: 1px;
+    background-color: rgb(255, 43, 6);
+    opacity: .9;
+    z-index: 2;
+}
+
+.item {
+    position: relative;
+    width: 320px; /*474px;*/
+    height: 200px; /*265px;*/
+    -webkit-box-sizing: border-box;
+    margin: 0 14px 0 0; /*0 24px 0 0;*/
+    border: 10px solid #262626;
+}
+
+.item-blank {
+    border: 0;
+}
+
+.item-playlist {
+    width: 200px;
+}
+
+.item .content {
+    width: 100%;
+    height: 100%;
+    -webkit-box-sizing: border-box;
+}
+
+.item .content span {
+    position: absolute;
+    margin: 15px;
+    text-align: center;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(255, 43, 6);
+}
+
+.item .content .text {
+    position: absolute;
+    bottom: 0;
+    padding: 10px 15px 24px 15px;
+    background: linear-gradient(to top, #000, transparent);
+}
+
+.item .content .playlist-text {
+    position: absolute;
+    bottom: 0;
+    padding: 10px 15px 24px 15px;
+    background: linear-gradient(to top, #000, transparent);
+}
+
+.item.focused {
+    border: 4px solid #EEE;
+}
+
+.item-blank.focused {
+    border: 0;
+}
+
+.related-play-list {
+    position: absolute;
+    overflow: hidden;
+    width: 1920px;
+    height: 498px;
+    top: 700px;
+}
+
+.move-container {
+    position: absolute;
+    left:0;
+    -webkit-transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+}
+
+.page {
+    position:absolute;
+    opacity: 1;
+    -webkit-transition: transform .5s ease-in-out, opacity .5s ease-in-out;
+}
+
+.page-fade-in {
+    opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+.page-index-fade-out {
+    opacity: 0;
+    -webkit-transform: translate3d(150px,0,0);
+}
+
+.page-playlist-fade-out {
+    opacity: 0;
+    -webkit-transform: translate3d(-150px,0,0);
+}
+
+.player-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+    background-color: black;
+    overflow: hidden;
+    display: block;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    margin: 90px auto;
+    border: 5px solid rgba(255, 255, 255, .2);
+    border-left-color: #FFF;
+    -webkit-animation: load 1.5s infinite linear;
+}
+
+@-webkit-keyframes load {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+.caph-checkbox {
+    width: 715px;
+    border: 4px solid rgba(0, 0, 0, 0);
+}
+.caph-checkbox:before {
+    font-size: 40px;
+}
+.caph-checkbox.focused, .caph-dialog-button.focused {
+    border: 4px solid #1C1CD8;
+}
+.caph-dialog-button.focused {
+    background-color: #1C1CD8;
+}
+.caph-dialog-button {
+    border: 4px solid #414141;
+}
+.caph-dialog .content {
+    text-align: left;
+    font-size: 40px;
+}
+
+
+/* player */
+.player {
+    position: absolute;
+    top: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    z-index: 9;
+}
+
+.player .caption-middle {
+    position: absolute;
+    bottom: 576px;
+    width: 1920px;
+    height: 100px;
+    text-align: center;
+}
+
+.player .caption-bottom {
+    position: absolute;
+    bottom: 136px;
+    width: 1920px;
+    height: 100px;
+    text-align: center;
+}
+
+.player .controls-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: opacity .3s ease-in-out;
+}
+.player .controls-bar.fade-out {
+    opacity: 0;
+}
+
+.player .controls-bar .process-bar {
+    position: relative;
+    width: 1392px;
+    height: 8px;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: rgba(128, 128, 128, .35);
+}
+
+.player .controls-bar .load-process {
+    width: 1392px;
+    height: 8px;
+    background-color: #969696;
+    -webkit-transform: translate3d(-1392px, 0, 0);
+}
+
+.player .controls-bar .play-process {
+    position: relative;
+    top: -8px;
+    width: 1392px;
+    height: 8px;
+    background-color: #EB2E2E;
+    -webkit-transform: translate3d(-1392px, 0, 0);
+}
+
+.player .controls-bar .opacity-panel {
+    width: 100%;
+    height: 128px;
+    margin: 0 auto;
+    position: absolute;
+    left: 0;
+    bottom: 120px;
+}
+
+.player .controls-bar .setting-panel {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+}
+
+.font-player-time {
+    color: #EEE;
+    font: 24px 'SamsungSVD_Latin Medium';
+}
+
+.player .controls-bar .current-time {
+    float: left;
+    margin: -112px 0 0 32px;
+}
+
+.player .controls-bar .duration {
+    float: right;
+    margin: -112px 32px 0 0;
+}
+
+.player .controls-bar .operations {
+    width: 900px;
+    height: 128px;
+    margin: 0 auto;
+    background-color: rgba(128, 128, 128, .25); /*#808080; opacity: .25;*/
+    margin: 0 auto;
+}
+
+.player .controls-bar .additional-buttons {
+    width: 400px;
+    height: 128px;
+    margin: 0 auto;
+    background-color: rgba(128, 128, 128, .25);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.player-loader {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin: 490px auto;
+    border: 10px solid rgba(255, 255, 255, .2);
+    border-left-color: #FFF;
+    -webkit-animation: load 1.5s infinite linear;
+}
+
+.view-location {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1920px;
+    height: 1080px;
+}
+
+.btn-player {
+    position: relative;
+    width: 180px;
+    height: 128px;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 15px;
+}
+.btn-player-setting {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 5px;
+}
+.btn-icon-player-setting {
+    position: absolute;
+    top: 11px;
+    left: 15px;
+}
+.btn-player-setting.focused {
+    background-color: #1C1CD8;
+}
+.btn-icon-player {
+    position: absolute;
+    top: 37px;
+    left: 60px;
+}
+.btn-player.focused {
+    background-color: #1C1CD8;
+}
+
+::cue {
+    color: #fff;
+    text-shadow: -1px 0 #161A23, 0 1px #161A23, 1px 0 #161A23, 0 -1px #161A23;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    bottom: 200px;
+    text-align: left;
+}
+
+/* button */
+.btn {
+    position: relative;
+    height: 82px;
+    font: bold 28px 'SamsungSVD_Latin Medium';
+    color: #FFF;
+    background-color: rgba(105, 105, 105, 0.9);
+    border-radius: 15px;
+}
+
+.btn.focused {
+    background-color: #1C1CD8;
+    color: #FFF;
+}
+
+.icon-caph {
+    width: 54px;
+    height: 54px;
+    opacity: 0.8;
+    background-image: url("../images/icon_sprite.png");
+}
+.btn-icon {
+    position: absolute;
+    top: 13px;
+    left: 22px;
+}
+.icon-caph-play {
+    background-position: 0 -2052px;
+}
+.icon-caph-pause {
+    background-position: 0 -1836px;
+}
+.icon-caph-rewind {
+    background-position: 0 -3564px;
+}
+.icon-caph-forward {
+    background-position: 0 -864px;
+}
+.icon-caph-prev {
+    background-position: 0 -2214px;
+}
+.icon-caph-next {
+    background-position: 0 -1674px;
+}
+.icon-caph-return {
+    background-position: 0 -3402px;
+}
+.icon-caph-setting {
+    background-position: 0 -4212px;
+}
+.btn-play:before {
+    content: 'PLAY';
+    line-height:80px;
+    margin: 0 44px 0 82px;
+}
+.btn-return{
+    width: 96px;
+    background-color: rgba(105, 105, 105, 0.2);
+}
+.btn-setting {
+    width: 96px;
+    background-color: rgba(105, 105, 105, 0.2);
+}
+.hide {
+    display: none;
+}

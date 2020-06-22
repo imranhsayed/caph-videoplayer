@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CAPH, For High performance web app.</title>
+	<link href="lib/caph/caph.min.css" rel="stylesheet" type="text/stylesheet">
+</head>
+<body>
+
+<div id="wrapper" class="wrapper"></div> <!-- Load 'views/main.html' file in this element -->
+
+<div id="caphPlayer">
+	<video style="width:100%">
+		<!-- Put your video file address into 'src' property in 'source' tag. -->
+		<source src="http://localhost:8888/dff/wp-content/uploads/2020/04/Final-intro-1-2.mp4" type="video/mp4"></source> <!--http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_50mb.mp4-->
+	</video>
+</div>
+
+<!-- Include js file for popular js libraries  -->
+<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="lib/lodash/lodash.min.js"></script>
+<script type="text/javascript" src="lib/caph/caph-jquery.min.js"></script>
+
+<!--Include js file for Touch Event -->
+<script type="text/javascript" src="lib/hammer.min.js"></script>
+
+<!-- Include js file for app -->
+<script type="text/javascript" src="scripts/utils/constant.js"></script>
+<script type="text/javascript" src="scripts/appController.js"></script>
+<script type="text/javascript" src="scripts/plugin/caphMedia.js"></script>
+
+<script>
+
+
+
+
+	myVideoApp.changeDepth(myVideoApp._DEPTH.PLAYER);
+	myVideoApp.launchPlayer();
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<div id="move-container" class="move-container">
+    <div class="logo"></div>
+    <div class="top-right-area" >
+        <div id="btnSetting" focusable data-focusable-depth="1" class="depth1 btn btn-gap btn-setting">
+            <div class="btn-icon icon-caph icon-caph-setting"></div>
+        </div>
+        <div id="btnBack" focusable data-focusable-depth="2" class="depth2 btn btn-gap btn-return">
+            <div class="btn-icon icon-caph icon-caph-return"></div>
+        </div>
+    </div>
+    <!-- OVERVIEW -->
+    <div class="overview">
+        <div class="font-header"></div>
+    </div>
+    
+    <!-- page: INDEX (OVERVIEW) -->
+    <div class="depth1 page">
+        <div class="overview desc font-body"></div>
+    </div>
+
+    <!-- page: TALK (OVERVIEW) -->
+    <div class="depth2 overview desc font-body"></div>
+    <div class="depth2 btn-wrapper">
+        <div id="btnPlay" focusable data-focusable-depth="2" data-focusable-initial-focus="true" data-focusable-name="btnPlay" class="btn btn-gap btn-play">
+            <div class="btn-icon icon-caph icon-caph-play"></div>
+        </div>
+    </div>
+    <!-- page: TALK (LIST) -->
+    <div class="depth2 related-play-list">
+        <div class="list-area">
+            <div class="title font-label title-opacity">Related play list</div>
+            <div id="related-play-list" title="Related Play list"></div>
+        </div>
+    </div>
+</div>
+<!-- page: INDEX (LIST) -->
+<div class="depth1 list-wrapper page">
+    <div id="list-category" class="list-category" style="transform: translate3d(0, 0, 0)">
+        <div class="list-area">
+            <div class="title font-label">Colors</div>
+            <div id="category_0" title="Colors"></div>
+        </div>
+        <div class="list-area">
+            <div class="title font-label">Alphabets</div>
+            <div id="category_1" title="Alphabets"></div>
+        </div>
+        <div class="list-area">
+            <div class="title font-label">Numbers</div>
+            <div id="category_2" title="Numbers"></div>
+        </div>
+    </div>
+</div>
+
+<script id="playlist" type="text/template">
+    <div id="<%=item.id%>" class="item" ng-class="{'item-blank': item.isBlank === true}" focusable data-focusable-depth="1" data-index="<%= index %>">
+        <div class="loader <%=(!item.loaded)?'hide':'' %>" ng-show="item.loaded === false"></div>
+        <div class="content" ng-hide="item.loaded === false" style="background: url(<%=item.photo_urls[0].url || '' %>);-webkit-background-size:100%;">
+            <div class="text font-label">
+                <div class="font-info"><%=item.name%></div>
+            </div>
+        </div>
+    </div>
+</script>
+<script id="playlistSm" type="text/template">
+    <div id="<%=item.id%>" class="item item-playlist" focusable data-focusable-depth="1" data-index="<%= index %>">
+        <div class="loader <%=(!item.loaded)?'hide':'' %>" ng-show="item.loaded === false"></div>
+        <div class="content" ng-hide="item.loaded === false" style="background: url(<%=item.photo_urls[0].url || '' %>);-webkit-background-size:100% 100%;">
+            <div class="playlist-text font-label"><div class="font-info">Small Item</div><%=item.name%></div>
+        </div>
+    </div>
+</script>
+
+<script id="relatedPlaylist" type="text/template">
+    <div class="item" focusable data-focusable-depth="2" on-focused="focus($event, CATEGORY.RELATED_PLAY_LIST, this)" on-selected="selected($event, CATEGORY.RELATED_PLAY_LIST, this,$index)">
+        <div class="loader <%=(!item.loaded)?'hide':'' %>"></div>
+        <div class="content" ng-hide="item.loaded === false" style="background: url(<%=item.photo_urls[0].url || '' %>);-webkit-background-size:100% 100%;">
+            <div class="text font-label">
+            <div class="font-info"><%=item.name%></div><%=item.name%></div>
+        </div>
+    </div>
+</script>

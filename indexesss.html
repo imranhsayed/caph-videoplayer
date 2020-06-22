@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>CAPH, For High performance web app.</title>
+    <link href="lib/caph/caph.min.css" rel="stylesheet" type="text/stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<!-- Welcome : It will disappear when '$scope.isInitCompleted' become 'false'. -->
+<div class="welcome"> <!-- set 'fade-out' class when the data is loaded. -->
+    <span class="caph">CAPH</span><br/>Web UI Framework for TV.
+</div>
+<div id="wrapper" class="wrapper"></div> <!-- Load 'views/main.html' file in this element -->
+
+<!-- Video Player : It will be shown when '$scope.currentDepth' become 'DEPTH.PLAYER'. -->
+<div id="caphPlayer" id="player" class="depth3 hide player">
+    <video style="width:100%">
+        <!-- Put your video file address into 'src' property in 'source' tag. -->
+        <source src="http://localhost:8888/dff/wp-content/uploads/2020/04/Final-intro-1-2.mp4" type="video/mp4"></source> <!--http://www.sample-videos.com/video/mp4/720/big_buck_bunny_720p_50mb.mp4-->
+        <!-- Put your sub-title file address into 'src' property in 'track' tag. -->
+        <track src="{{Sub title Address}}" label="English subtitles" kind="subtitles" srclang="en"></track> <!--http://www.html5rocks.com/en/tutorials/video/basics/devstories-en.vtt-->
+    </video>
+    <div class="controls-bar">
+        <div class="opacity-panel">
+            <div class="operations">
+                <div id="btnPlayerPlay" focusable data-focusable-depth="3" data-focusable-name="btnPlayerPlay" data-focusable-initial-focus="true" class="btn-player">
+                    <div class="btn-icon-player icon-caph icon-caph-play"></div>
+                </div>
+            </div>
+        </div>
+        <div class="setting-panel">
+            <div id="btnPlayerReturn" focusable data-focusable-depth="3" data-focusable-name="btnPlayerReturn" class="btn-player-setting">
+                <div class="btn-icon-player-setting icon-caph icon-caph-return"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Setting dialog : It will be shown when the 'setting' button is clicked by user. -->
+<div id="dialogSetting" class="caph-dialog" style="width:800px;">
+    <div class="caph-dialog-title">Setting</div>
+    <div class="caph-dialog-content">
+        <div id="chkAutoPlay"> Auto Play</div>
+        <div id="chkSubTitle"> Show Sub-Title</div>
+    </div>
+    <div class="caph-dialog-buttons" button-type="alert"></div>
+</div>
+<!-- Include js file for popular js libraries  -->
+<script type="text/javascript" src="lib/jquery/jquery.min.js"></script>
+<script type="text/javascript" src="lib/lodash/lodash.min.js"></script>
+<script type="text/javascript" src="lib/caph/caph-jquery.min.js"></script>
+
+<!--Include js file for Touch Event -->
+<script type="text/javascript" src="lib/hammer.min.js"></script>
+
+<!-- Include js file for app -->
+<script type="text/javascript" src="scripts/app.js"></script>
+<script type="text/javascript" src="scripts/utils/constant.js"></script>
+<script type="text/javascript" src="scripts/appController.js"></script>
+<script type="text/javascript" src="scripts/plugin/caphMedia.js"></script>
+</body>
+</html>
